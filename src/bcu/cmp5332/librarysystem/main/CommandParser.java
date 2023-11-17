@@ -33,9 +33,9 @@ public class CommandParser {
             
             } else if (cmd.equals("addpatron")) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                System.out.println("Name");
+                System.out.print("Name: ");
                 String name = br.readLine();
-                System.out.println("Phone");
+                System.out.print("Phone: ");
                 String phone = br.readLine();
                 
                 return new AddPatron(name, phone);
