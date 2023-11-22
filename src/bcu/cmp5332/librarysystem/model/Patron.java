@@ -32,6 +32,13 @@ public class Patron {
     	return phone;
     }
     
+    public void setName() {
+    	this.name = name;
+    }
+ 
+    public void setPhone() {
+    	this.phone = phone;
+    }
     
     public void borrowBook(Book book, LocalDate dueDate) throws LibraryException {
         // TODO: implementation here
