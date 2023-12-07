@@ -19,13 +19,12 @@ public class BorrowBook implements Command {
 
 	@Override
 	public void execute(Library library, LocalDate currentDate) throws LibraryException {
+		LocalDate dueDate = currentDate.plusDays(library.getLoanPeriod());
 		Patron patron = library.getPatronByID(patronID);
 		Book book = library.getBookByID(bookID);
 
-		if (book.isOnLoan()) {
-			System.out.println("Book already on loan");
-		}
-	}
+		patron.borrowBook(book, dueDate);
 
+	}
 }
 

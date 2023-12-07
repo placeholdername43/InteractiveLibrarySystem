@@ -10,10 +10,13 @@ public class AddPatron implements Command {
 
 	private final String name;
 	private final String phone;
+	private final String email;
+	
 
-	public AddPatron(String name, String phone) {
+	public AddPatron(String name, String phone, String email) {
 		this.name = name;
 		this.phone = phone;
+		this.email = email;
 	}
 
 	@Override
@@ -23,7 +26,7 @@ public class AddPatron implements Command {
 			int lastIndex = library.getPatrons().size() -1;
 			maxid = library.getBooks().get(lastIndex).getId();
 		}
-		Patron patron = new Patron(maxid, name, phone);
+		Patron patron = new Patron(maxid, name, phone, email);
 		library.addPatron(patron);
 		System.out.println("Patron added");
 	}
