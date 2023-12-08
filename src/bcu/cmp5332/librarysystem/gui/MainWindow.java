@@ -2,6 +2,8 @@ package bcu.cmp5332.librarysystem.gui;
 
 import bcu.cmp5332.librarysystem.model.Book;
 import bcu.cmp5332.librarysystem.model.Library;
+import bcu.cmp5332.librarysystem.model.Patron;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -19,7 +21,6 @@ public class MainWindow extends JFrame implements ActionListener {
     private JMenu adminMenu;
     private JMenu booksMenu;
     private JMenu membersMenu;
-
     private JMenuItem adminExit;
 
     private JMenuItem booksView;
@@ -27,7 +28,7 @@ public class MainWindow extends JFrame implements ActionListener {
     private JMenuItem booksDel;	
     private JMenuItem booksIssue;
     private JMenuItem booksReturn;
-
+    
     private JMenuItem memView;
     private JMenuItem memAdd;
     private JMenuItem memDel;
@@ -142,10 +143,10 @@ public class MainWindow extends JFrame implements ActionListener {
             
             
         } else if (ae.getSource() == memView) {
-            
+            displayPatrons();
             
         } else if (ae.getSource() == memAdd) {
-            
+            new AddMemberWindow(this);
             
         } else if (ae.getSource() == memDel) {
             
@@ -171,5 +172,26 @@ public class MainWindow extends JFrame implements ActionListener {
         this.getContentPane().removeAll();
         this.getContentPane().add(new JScrollPane(table));
         this.revalidate();
-    }	
+    }
+    
+    public void displayPatrons() {
+    	List<Patron> patronList = library.getPatrons();
+    	// headers for the table
+    	String [] columns = new String [] {"Name", "Email", "Phone"};
+    	
+    	Object [][] data = new Object[patronList.size()] [6]; // wtf is this doing???
+    	for (int i = 0; i < patronList.size(); i++) {
+    		Patron patron = patronList.get(i);
+    		data[i][0] = patron.getName();
+    		data[i][1] = patron.getEmail();
+    		data[i][2] = patron.getPhone();
+    	}
+    	
+    	JTable table = new JTable(data, columns);
+    	this.getContentPane().removeAll();
+    	this.getContentPane().add(new JScrollPane(table));
+    	this.revalidate();
+    	
+    }
+    
 }
