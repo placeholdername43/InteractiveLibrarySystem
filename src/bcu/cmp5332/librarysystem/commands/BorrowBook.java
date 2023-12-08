@@ -12,7 +12,7 @@ public class BorrowBook implements Command {
 	private int bookID;
 	private int patronID;
 
-	public BorrowBook(int bookID, int patronID) {
+	public BorrowBook(int patronID, int bookID) {
 		this.bookID = bookID;
 		this.patronID = patronID;
 	}
