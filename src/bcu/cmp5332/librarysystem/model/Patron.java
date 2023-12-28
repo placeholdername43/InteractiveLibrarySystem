@@ -53,6 +53,9 @@ public class Patron {
 		this.email = email;
 	}
 	
+	public String getDetailsShort() {
+		return "Patron #" + id + " - " + name;
+	}
 
 	public void borrowBook(Book book, LocalDate dueDate) throws LibraryException {
 		// TODO: implementation here

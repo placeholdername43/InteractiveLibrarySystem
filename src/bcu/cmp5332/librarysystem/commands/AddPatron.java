@@ -1,9 +1,11 @@
 package bcu.cmp5332.librarysystem.commands;
 
+import bcu.cmp5332.librarysystem.data.LibraryData;
 import bcu.cmp5332.librarysystem.main.LibraryException;
 import bcu.cmp5332.librarysystem.model.Library;
 import bcu.cmp5332.librarysystem.model.Patron;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class AddPatron implements Command {
@@ -21,13 +23,22 @@ public class AddPatron implements Command {
 
 	@Override
 	public void execute(Library library, LocalDate currentDate) throws LibraryException {
-		int maxid = 0;
+		int maxId = 0;
 		if (library.getPatrons().size() > 0) {
 			int lastIndex = library.getPatrons().size() -1;
-			maxid = library.getBooks().get(lastIndex).getId();
+			maxId = library.getPatrons().get(lastIndex).getId();
 		}
-		Patron patron = new Patron(maxid, name, phone, email);
+		Patron patron = new Patron(++maxId, name, phone, email);
 		library.addPatron(patron);
-		System.out.println("Patron added");
+		
+		// clean up needed here
+		try {
+			LibraryData.store(library);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("Patron ID: " + patron.getId() + " added");
 	}
 }
