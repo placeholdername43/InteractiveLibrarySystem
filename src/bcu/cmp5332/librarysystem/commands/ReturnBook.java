@@ -11,7 +11,7 @@ public class ReturnBook implements Command {
 	private int bookID;
 	private int patronID;
 
-	public ReturnBook(int bookID, int patronID) {
+	public ReturnBook(int patronID, int bookID) {
 		this.bookID = bookID;
 		this.patronID = patronID;
 	}

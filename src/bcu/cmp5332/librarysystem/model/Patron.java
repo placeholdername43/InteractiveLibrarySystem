@@ -58,7 +58,11 @@ public class Patron {
 	}
 
 	public void borrowBook(Book book, LocalDate dueDate) throws LibraryException {
-		// TODO: implementation here
+		if (book.isOnLoan()) {
+			throw new LibraryException("Book is already loaned out");
+		}
+		Loan loan = new Loan(this, book, LocalDate.now(), dueDate);
+		book.setLoan(loan);
 		books.add(book);
 
 	}
@@ -68,11 +72,12 @@ public class Patron {
 	}
 
 	public void returnBook(Book book) throws LibraryException {
-		// TODO: implementation here
+		this.books.remove(book);
+		book.returnToLibrary();
 	}
 
 	public void addBook(Book book) {
-		// TODO: implementation here
+		this.books.add(book);
 	}
 
 

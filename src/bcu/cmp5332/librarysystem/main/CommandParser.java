@@ -1,6 +1,7 @@
 package bcu.cmp5332.librarysystem.main;
 
 import bcu.cmp5332.librarysystem.commands.LoadGUI;
+import bcu.cmp5332.librarysystem.commands.ReturnBook;
 import bcu.cmp5332.librarysystem.commands.ListBooks;
 import bcu.cmp5332.librarysystem.commands.ListPatrons;
 import bcu.cmp5332.librarysystem.commands.AddBook;
@@ -8,6 +9,7 @@ import bcu.cmp5332.librarysystem.commands.AddPatron;
 import bcu.cmp5332.librarysystem.commands.BorrowBook;
 import bcu.cmp5332.librarysystem.commands.Command;
 import bcu.cmp5332.librarysystem.commands.Help;
+import bcu.cmp5332.librarysystem.commands.ShowBook;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -60,7 +62,7 @@ public class CommandParser {
                 int id = Integer.parseInt(parts[1]);
 
                 if (cmd.equals("showbook")) {
-                    
+                    return new ShowBook(id);
                 } else if (cmd.equals("showpatron")) {
                     
                 }
@@ -74,7 +76,7 @@ public class CommandParser {
                 } else if (cmd.equals("renew")) {
                     
                 } else if (cmd.equals("return")) {
-                    
+                    return new ReturnBook(patronID, bookID);
                 }
             }
         } catch (NumberFormatException ex) {
