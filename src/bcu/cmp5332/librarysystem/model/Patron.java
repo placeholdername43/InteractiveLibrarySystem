@@ -59,7 +59,7 @@ public class Patron {
 
 	public void borrowBook(Book book, LocalDate dueDate) throws LibraryException {
 		if (book.isOnLoan()) {
-			throw new LibraryException("Book is already loaned out");
+			throw new LibraryException("Book is already loaned");
 		}
 		Loan loan = new Loan(this, book, LocalDate.now(), dueDate);
 		book.setLoan(loan);
