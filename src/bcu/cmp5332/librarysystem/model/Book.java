@@ -106,4 +106,12 @@ public class Book {
 	public void returnToLibrary() {
 		loan = null;
 	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+	
+	public void setPublisher() {
+		this.publisher = publisher;
+	}
 }

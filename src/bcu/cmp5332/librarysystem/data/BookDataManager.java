@@ -45,6 +45,7 @@ public class BookDataManager implements DataManager {
                 out.print(book.getTitle() + SEPARATOR);
                 out.print(book.getAuthor() + SEPARATOR);
                 out.print(book.getPublicationYear() + SEPARATOR);
+                out.print(book.getPublisher() + SEPARATOR);
                 out.println();
             }
         }

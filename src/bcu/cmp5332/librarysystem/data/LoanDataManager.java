@@ -6,6 +6,7 @@ import bcu.cmp5332.librarysystem.model.Library;
 import bcu.cmp5332.librarysystem.model.Loan;
 import bcu.cmp5332.librarysystem.model.Patron;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +19,7 @@ public class LoanDataManager implements DataManager {
 
     @Override
     public void loadData(Library library) throws IOException, LibraryException {
-        try ( Scanner sc = new Scanner( new File(RESOURCE))){
+    	try (Scanner sc = new Scanner(new File(RESOURCE))) {
         	int line_idx = 1;
         	while(sc.hasNextLine()) {
         		String line = sc.nextLine();
