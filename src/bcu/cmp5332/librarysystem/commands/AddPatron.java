@@ -31,14 +31,6 @@ public class AddPatron implements Command {
 		Patron patron = new Patron(++maxId, name, phone, email);
 		library.addPatron(patron);
 		
-		// clean up needed here
-		try {
-			LibraryData.store(library);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		System.out.println("Patron ID: " + patron.getId() + " added");
 	}
 }

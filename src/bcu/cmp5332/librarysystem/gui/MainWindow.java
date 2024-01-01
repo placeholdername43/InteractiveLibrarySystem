@@ -177,7 +177,7 @@ public class MainWindow extends JFrame implements ActionListener {
     public void displayPatrons() {
     	List<Patron> patronList = library.getPatrons();
     	// headers for the table
-    	String [] columns = new String [] {"Name", "Email", "Phone"};
+    	String [] columns = new String [] {"Name", "Email", "Phone", "Num of books loaned"};
     	
     	Object [][] data = new Object[patronList.size()] [6]; // wtf is this doing???
     	for (int i = 0; i < patronList.size(); i++) {
@@ -185,6 +185,7 @@ public class MainWindow extends JFrame implements ActionListener {
     		data[i][0] = patron.getName();
     		data[i][1] = patron.getEmail();
     		data[i][2] = patron.getPhone();
+    		data[i][3] = patron.getPhone(); //placeholder for num fo books
     	}
     	
     	JTable table = new JTable(data, columns);
