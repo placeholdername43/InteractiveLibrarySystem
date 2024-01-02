@@ -1,7 +1,8 @@
-15::Pride and Prejudice::Jane Austen::1813::::
-23::Nineteen Eighty-Four::George Orwell::1949::::
-42::The Hitchhiker's Guide to the Galaxy::Douglas Adams::1979::::
-43::The War of The Worlds::H.G. Wells::1898::::
-45::TESTBOOK::TEST::1983::::
-46::test::test::1943::::
-47::test::test::test::test::
+15::Pride and Prejudice::Jane Austen::1813::::false::
+23::Nineteen Eighty-Four::George Orwell::1949::::false::
+42::The Hitchhiker's Guide to the Galaxy::Douglas Adams::1979::::false::
+43::The War of The Worlds::H.G. Wells::1898::::false::
+45::TESTBOOK::TEST::1983::::false::
+46::test::test::1943::::false::
+47::test::test::test::test::false::
+48::tetsst::test::test::test::false::

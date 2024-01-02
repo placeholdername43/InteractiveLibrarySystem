@@ -11,13 +11,15 @@ public class Book {
 	private String publicationYear;
 	private String publisher;
 	private Loan loan;
+	private boolean isDeleted;
 
-	public Book(int id, String title, String author, String publicationYear, String publisher) {
+	public Book(int id, String title, String author, String publicationYear, String publisher, boolean deleted) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.publicationYear = publicationYear;
 		this.publisher = publisher;
+		this.isDeleted = deleted;
 	}
 
 	public int getId() {
@@ -32,7 +34,7 @@ public class Book {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	private void setTitle(String title) {
 		this.title = title;
 	}
 
@@ -40,7 +42,7 @@ public class Book {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	private void setAuthor(String author) {
 		this.author = author;
 	}
 
@@ -48,7 +50,7 @@ public class Book {
 		return publicationYear;
 	}
 
-	public void setPublicationYear(String publicationYear) {
+	private void setPublicationYear(String publicationYear) {
 		this.publicationYear = publicationYear;
 	}
 
@@ -91,7 +93,7 @@ public class Book {
 		return null;
 	}
 
-	public void setDueDate(LocalDate dueDate) throws LibraryException {
+	private void setDueDate(LocalDate dueDate) throws LibraryException {
 		loan.setDueDate();
 	}
 
@@ -111,7 +113,16 @@ public class Book {
 		return publisher;
 	}
 	
-	public void setPublisher() {
+	private void setPublisher() {
 		this.publisher = publisher;
 	}
+	
+	public boolean getIsDeleted() {
+		return isDeleted;
+	}
+	
+	public void setIsDeleted(boolean b) {
+		this.isDeleted = isDeleted;
+	}
+	
 }

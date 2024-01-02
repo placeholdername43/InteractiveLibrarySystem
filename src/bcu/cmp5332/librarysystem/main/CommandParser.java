@@ -8,8 +8,11 @@ import bcu.cmp5332.librarysystem.commands.AddBook;
 import bcu.cmp5332.librarysystem.commands.AddPatron;
 import bcu.cmp5332.librarysystem.commands.BorrowBook;
 import bcu.cmp5332.librarysystem.commands.Command;
+import bcu.cmp5332.librarysystem.commands.DeleteBook;
 import bcu.cmp5332.librarysystem.commands.Help;
 import bcu.cmp5332.librarysystem.commands.ShowBook;
+import bcu.cmp5332.librarysystem.commands.RenewBook;
+import bcu.cmp5332.librarysystem.commands.ShowPatron;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -64,8 +67,12 @@ public class CommandParser {
                 if (cmd.equals("showbook")) {
                     return new ShowBook(id);
                 } else if (cmd.equals("showpatron")) {
-                    
+                	//return new ShowPatron(id);
+                } else if (cmd.equals("deletebook")) {
+                	return new DeleteBook(id);
                 }
+                
+                
             } else if (parts.length == 3) {
                 int patronID = Integer.parseInt(parts[1]);
                 int bookID = Integer.parseInt(parts[2]);
@@ -74,9 +81,9 @@ public class CommandParser {
                 	return new BorrowBook(patronID, bookID);
                     
                 } else if (cmd.equals("renew")) {
-                    
+                    //return new RenewBook(patronID, bookID);
                 } else if (cmd.equals("return")) {
-                    return new ReturnBook(patronID, bookID);
+                    //return new ReturnBook(patronID, bookID);
                 }
             }
         } catch (NumberFormatException ex) {
