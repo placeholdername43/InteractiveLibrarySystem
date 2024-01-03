@@ -185,7 +185,7 @@ public class MainWindow extends JFrame implements ActionListener {
     		data[i][0] = patron.getName();
     		data[i][1] = patron.getEmail();
     		data[i][2] = patron.getPhone();
-    		data[i][3] = patron.getPhone(); //placeholder for num fo books
+    		data[i][3] = patron.getNumberOfBooks(); //placeholder for num fo books
     	}
     	
     	JTable table = new JTable(data, columns);

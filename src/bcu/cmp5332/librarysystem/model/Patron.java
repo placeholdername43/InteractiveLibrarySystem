@@ -90,4 +90,8 @@ public class Patron {
 		this.isDeleted = isDeleted;
 	}
 	
+	public int getNumberOfBooks() {
+		return books.size();
+	}
+	
 }
