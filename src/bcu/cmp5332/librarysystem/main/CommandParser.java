@@ -9,6 +9,7 @@ import bcu.cmp5332.librarysystem.commands.AddPatron;
 import bcu.cmp5332.librarysystem.commands.BorrowBook;
 import bcu.cmp5332.librarysystem.commands.Command;
 import bcu.cmp5332.librarysystem.commands.DeleteBook;
+import bcu.cmp5332.librarysystem.commands.DeletePatron;
 import bcu.cmp5332.librarysystem.commands.Help;
 import bcu.cmp5332.librarysystem.commands.ShowBook;
 import bcu.cmp5332.librarysystem.commands.RenewBook;
@@ -70,6 +71,8 @@ public class CommandParser {
                 	//return new ShowPatron(id);
                 } else if (cmd.equals("deletebook")) {
                 	return new DeleteBook(id);
+                } else if (cmd.equals("deletepatron")) {
+                	return new DeletePatron(id);
                 }
                 
                 

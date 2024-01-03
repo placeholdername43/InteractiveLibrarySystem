@@ -18,5 +18,5 @@ public class ListBooks implements Command {
 				System.out.println(book.getDetailsShort() + book.getIsDeleted());
 		}
 		System.out.println(books.size() + " book(s)");
-	}
+	}	// need to fix deleted book being counted in this 
 }

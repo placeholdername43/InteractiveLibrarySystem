@@ -86,7 +86,7 @@ public class Patron {
 		return isDeleted;
 	}
 	
-	public void setIsDeleted() {
+	public void setIsDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
 	
