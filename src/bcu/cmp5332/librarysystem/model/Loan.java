@@ -10,6 +10,7 @@ public class Loan {
 	private LocalDate dueDate;
 	private boolean isComplete;
 
+
 	public Loan(Patron patron, Book book, LocalDate startDate, LocalDate dueDate) {
 		this.patron = patron;
 		this.book = book;
@@ -59,5 +60,6 @@ public class Loan {
 		this.isComplete = isComplete;
 		
 	}
+	
 
 }

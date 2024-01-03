@@ -23,7 +23,16 @@ public class BorrowBook implements Command {
 		Patron patron = library.getPatronByID(patronID);
 		Book book = library.getBookByID(bookID);
 
-		patron.borrowBook(book, dueDate);
+		
+		if(patron.getNumberOfBooks() > library.getBorrowLimit()) {
+			System.out.println("Patron has too many books, please return before borrowing more");
+			
+		}else {
+			patron.borrowBook(book, dueDate);
+			System.out.println(patron.getNumberOfBooks());
+			System.out.println(library.getBorrowLimit());
+		}
+		
 
 	}
 }

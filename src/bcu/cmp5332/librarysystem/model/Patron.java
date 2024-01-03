@@ -94,4 +94,10 @@ public class Patron {
 		return books.size();
 	}
 	
+	public List<Book> getBooks(){
+		return this.books;
+	}
+	
+	
+	
 }

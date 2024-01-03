@@ -83,7 +83,7 @@ public class CommandParser {
                 } else if (cmd.equals("renew")) {
                     //return new RenewBook(patronID, bookID);
                 } else if (cmd.equals("return")) {
-                    //return new ReturnBook(patronID, bookID);
+                    return new ReturnBook(patronID, bookID);
                 }
             }
         } catch (NumberFormatException ex) {

@@ -8,7 +8,8 @@ public class Library {
 	private final int loanPeriod = 7;
 	private final Map<Integer, Patron> patrons = new TreeMap<>();
 	private final Map<Integer, Book> books = new TreeMap<>();
-
+	private final int borrowLimit = 7;
+	
 	public int getLoanPeriod() {
 		return loanPeriod;
 	}
@@ -50,6 +51,10 @@ public class Library {
 			throw new IllegalArgumentException("Duplicate Patron ID");
 		}
 		patrons.put(patron.getId(), patron);
+	}
+
+	public int getBorrowLimit() {
+		return borrowLimit;
 	}
 
 
