@@ -12,13 +12,15 @@ public class Patron {
 	private String phone;
 	private final List<Book> books = new ArrayList<>();
 	private String email;
+	private boolean isDeleted;
 
 	// TODO: implement constructor here
-	public Patron(int id, String name, String phone, String email ) {
+	public Patron(int id, String name, String phone, String email, boolean isDeleted) {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
+		this.isDeleted = isDeleted;
 	}
 
 	public int getId() {
@@ -80,5 +82,12 @@ public class Patron {
 		this.books.add(book);
 	}
 
-
+	public boolean getIsDeleted() {
+		return isDeleted;
+	}
+	
+	public void setIsDeleted() {
+		this.isDeleted = isDeleted;
+	}
+	
 }

@@ -23,7 +23,13 @@ public class DeleteBook implements Command{
 			System.out.println("CANNOT DELETE LOANED BOOK");
 		}else {
 			book.setIsDeleted(true);
-			
+			System.out.println(book.getDetailsShort() + " Deleted");
+			try {
+				LibraryData.store(library);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		

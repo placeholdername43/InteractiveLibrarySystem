@@ -1,6 +1,8 @@
-1::Abdel-Rahman Tawil::07555555555::abdel@gmail.com::
-2::Kostas Vlachos::07596454545::kostas@gmail.com::
-3::test::test::test::
-4::membertest::test::12345::
-5::test::test::email@test.com::
-6::test::12345::email@email.com::
+1::Abdel-Rahman Tawil::07555555555::abdel@gmail.com::false::
+2::Kostas Vlachos::07596454545::kostas@gmail.com::false::
+3::test::test::test::false::
+4::membertest::test::12345::false::
+5::test::test::email@test.com::false::
+6::test::12345::email@email.com::false::
+7::test::test::test::false::
+8::test::test::test::false::

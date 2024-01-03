@@ -37,7 +37,7 @@ public class CommandParser {
                 System.out.print("Publisher: ");
                 String publisher = br.readLine();
                 
-                return new AddBook(title, author, publicationYear, publisher);
+                return new AddBook(title, author, publicationYear, publisher, false);
             
             } else if (cmd.equals("addpatron")) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -48,7 +48,7 @@ public class CommandParser {
                 System.out.println("Email: ");
                 String email = br.readLine();
                 
-                return new AddPatron(name, phone, email);
+                return new AddPatron(name, phone, email, false);
           
             } else if (cmd.equals("loadgui")) {
                 return new LoadGUI();

@@ -14,8 +14,8 @@ public class ListBooks implements Command {
 		List<Book> books = library.getBooks();
 
 		for (Book book : books) {
-			if(!book.getIsDeleted())
-				System.out.println(book.getDetailsShort());
+			if(book.getIsDeleted() != true)
+				System.out.println(book.getDetailsShort() + book.getIsDeleted());
 		}
 		System.out.println(books.size() + " book(s)");
 	}
