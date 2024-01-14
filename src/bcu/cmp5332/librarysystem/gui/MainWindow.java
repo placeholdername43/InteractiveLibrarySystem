@@ -165,15 +165,16 @@ public class MainWindow extends JFrame implements ActionListener {
 	public void displayBooks() {
 		List<Book> booksList = library.getBooks();
 		// headers for the table
-		String[] columns = new String[]{"Title", "Author", "Pub Date", "Status"};
+		String[] columns = new String[]{"ID","Title", "Author", "Pub Date", "Status"};
 
 		Object[][] data = new Object[booksList.size()][6];
 		for (int i = 0; i < booksList.size(); i++) {
 			Book book = booksList.get(i);
-			data[i][0] = book.getTitle();
-			data[i][1] = book.getAuthor();
-			data[i][2] = book.getPublicationYear();
-			data[i][3] = book.getStatus();
+			data[i][0] = book.getId();
+			data[i][1] = book.getTitle();
+			data[i][2] = book.getAuthor();
+			data[i][3] = book.getPublicationYear();
+			data[i][4] = book.getStatus();
 		}
 
 		JTable table = new JTable(data, columns);
@@ -203,15 +204,16 @@ public class MainWindow extends JFrame implements ActionListener {
 	public void displayPatrons() {
 		List<Patron> patronList = library.getPatrons();
 		// headers for the table
-		String [] columns = new String [] {"Name", "Email", "Phone", "Num of books loaned"};
+		String [] columns = new String [] {"ID","Name", "Email", "Phone", "Num of books loaned"};
 
 		Object [][] data = new Object[patronList.size()] [6]; 
 		for (int i = 0; i < patronList.size(); i++) {
 			Patron patron = patronList.get(i);
-			data[i][0] = patron.getName();
-			data[i][1] = patron.getEmail();
-			data[i][2] = patron.getPhone();
-			data[i][3] = patron.getNumberOfBooks(); 
+			data[i][0] = patron.getId();
+			data[i][1] = patron.getName();
+			data[i][2] = patron.getEmail();
+			data[i][3] = patron.getPhone();
+			data[i][4] = patron.getNumberOfBooks(); 
 		}
 
 		JTable table = new JTable(data, columns);

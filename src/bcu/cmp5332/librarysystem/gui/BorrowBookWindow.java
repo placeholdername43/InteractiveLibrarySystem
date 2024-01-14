@@ -93,6 +93,7 @@ public class BorrowBookWindow extends JFrame implements ActionListener {
             mw.displayBooks();
             // hide (close) the AddBookWindow
             this.setVisible(false);
+            
         } catch (LibraryException ex) {
             JOptionPane.showMessageDialog(this, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
