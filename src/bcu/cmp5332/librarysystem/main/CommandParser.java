@@ -84,7 +84,7 @@ public class CommandParser {
                 	return new BorrowBook(patronID, bookID);
                     
                 } else if (cmd.equals("renew")) {
-                    //return new RenewBook(patronID, bookID);
+                    return new RenewBook(patronID, bookID);
                 } else if (cmd.equals("return")) {
                     return new ReturnBook(patronID, bookID);
                 }
