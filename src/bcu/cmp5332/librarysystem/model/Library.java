@@ -9,7 +9,7 @@ public class Library {
 	private final Map<Integer, Patron> patrons = new TreeMap<>();
 	private final Map<Integer, Book> books = new TreeMap<>();
 	private final int borrowLimit = 7;
-
+	
 	public int getLoanPeriod() {
 		return loanPeriod;
 	}
@@ -56,7 +56,6 @@ public class Library {
 	public int getBorrowLimit() {
 		return borrowLimit;
 	}
-	
 
 
 }

@@ -1,29 +1,27 @@
 package bcu.cmp5332.librarysystem.model;
 
+import bcu.cmp5332.librarysystem.main.LibraryException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import bcu.cmp5332.librarysystem.main.LibraryException;
-
 public class Patron {
-    private int id;
-    private String name;
-    private String phone;
-    private String email;
-    private boolean isDeleted;
-    private List<Loan> loans; // history of loans
-    private List<Book> books; // Declaration of the books list
 
-    public Patron(int id, String name, String phone, String email, boolean isDeleted) {
-        this.id = id;
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.isDeleted = isDeleted;
-        this.loans = new ArrayList<>();
-        this.books = new ArrayList<>(); // Initialisation of the books list
-    }
+	private int id;
+	private String name;
+	private String phone;
+	private final List<Book> books = new ArrayList<>();
+	private String email;
+	private boolean isDeleted;
+
+	// TODO: implement constructor here
+	public Patron(int id, String name, String phone, String email, boolean isDeleted) {
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.isDeleted = isDeleted;
+	}
 
 	public int getId() {
 		return id;
@@ -62,13 +60,18 @@ public class Patron {
 	}
 
 	public void borrowBook(Book book, LocalDate dueDate) throws LibraryException {
-        if (book.isOnLoan()) {
-            throw new LibraryException("Book is already on loan");
-        }
-        Loan newLoan = new Loan(this, book, LocalDate.now(), dueDate);
-        loans.add(newLoan);
-        book.setLoan(newLoan);
-    }
+		if (book.isOnLoan()) {
+			throw new LibraryException("Book is already loaned");
+		}
+		Loan loan = new Loan(this, book, LocalDate.now(), dueDate);
+		book.setLoan(loan);
+		books.add(book);
+
+	}
+
+	public void renewBook(Book book, LocalDate dueDate) throws LibraryException {
+		// TODO: implementation here
+	}
 
 	public void returnBook(Book book) throws LibraryException {
 		this.books.remove(book);
@@ -95,13 +98,6 @@ public class Patron {
 		return this.books;
 	}
 	
-	public List<Loan> getLoanHistory() {
-        return loans;
-    }
-
-	public void renewBook(Book book, LocalDate dueDate) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 }
