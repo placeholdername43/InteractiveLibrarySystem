@@ -23,12 +23,13 @@ public class DeletePatron implements Command{
 		Patron patron = library.getPatronByID(patronID);
 		patron.setIsDeleted(true);
 		System.out.println(patron.getDetailsShort() + "Deleted");
-		try {
+		
+		/*try {
 			LibraryData.store(library);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 	}

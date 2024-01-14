@@ -19,17 +19,21 @@ public class DeleteBook implements Command{
 	@Override
 	public void execute(Library library, LocalDate currentDate) throws LibraryException {
 		Book book = library.getBookByID(bookID);
+		
+		
 		if(book.isOnLoan()) {
 			System.out.println("CANNOT DELETE LOANED BOOK");
 		}else {
 			book.setIsDeleted(true);
 			System.out.println(book.getDetailsShort() + " Deleted");
-			try {
+			
+			/*try {
 				LibraryData.store(library);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				// add rollback if it doesnt work // set to false
+				book.setIsDeleted(false);
 				e.printStackTrace();
-			}
+			}*/
 		}
 		
 		

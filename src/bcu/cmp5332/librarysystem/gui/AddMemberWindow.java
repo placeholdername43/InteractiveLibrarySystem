@@ -89,7 +89,7 @@ public class AddMemberWindow extends JFrame implements ActionListener{
 			String phone = phoneText.getText();
 
 			// create and execute the addPatron command
-			Command addPatron = new AddPatron(name, email, phone);
+			Command addPatron = new AddPatron(name, email, phone, false);
 			addPatron.execute(mw.getLibrary(), LocalDate.now());
 			// refresth the view with the list of patrons
 			mw.displayPatrons();

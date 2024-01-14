@@ -39,11 +39,11 @@ public class Patron {
 		return email;
 	}
 
-	public void setName() {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setPhone() {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -51,7 +51,7 @@ public class Patron {
 		this.id = id;
 	}
 
-	public void setEmail() {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	

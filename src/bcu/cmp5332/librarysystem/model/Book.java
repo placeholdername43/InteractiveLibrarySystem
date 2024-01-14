@@ -113,7 +113,7 @@ public class Book {
 		return publisher;
 	}
 	
-	private void setPublisher() {
+	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
 	

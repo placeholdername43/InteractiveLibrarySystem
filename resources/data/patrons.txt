@@ -4,5 +4,5 @@
 4::membertest::test::12345::false::
 5::test::test::email@test.com::false::
 6::test::12345::email@email.com::false::
-7::test::test::test::false::
+7::test::test::test::true::
 8::test::test::test::true::
