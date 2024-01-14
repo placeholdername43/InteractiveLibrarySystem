@@ -19,6 +19,7 @@ public interface Command {
             + "\treturn [patron id] [book id]    return a book\n"
             + "\tdeletebook [book id]    		 delete a book\n"
             + "\tdeletepatron [patron id]    	 delete a patron\n"
+            + "\tviewhistory [patron id]         view loan history for a patron\n"
             + "\tloadgui                         loads the GUI version of the app\n"
             + "\thelp                            prints this help message\n"
             + "\texit                            exits the program";
