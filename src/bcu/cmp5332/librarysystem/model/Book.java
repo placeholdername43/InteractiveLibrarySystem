@@ -93,8 +93,8 @@ public class Book {
 		return null;
 	}
 
-	private void setDueDate(LocalDate dueDate) throws LibraryException {
-		loan.setDueDate();
+	public void setDueDate(LocalDate dueDate) throws LibraryException {
+		loan.setDueDate(dueDate);
 	}
 
 	public Loan getLoan() {

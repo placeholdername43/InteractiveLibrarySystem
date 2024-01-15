@@ -3,6 +3,7 @@ package bcu.cmp5332.librarysystem.model;
 import bcu.cmp5332.librarysystem.main.LibraryException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Patron {
@@ -13,6 +14,7 @@ public class Patron {
 	private final List<Book> books = new ArrayList<>();
 	private String email;
 	private boolean isDeleted;
+	private final List<Loan> loanHistory = new ArrayList<>();
 
 	// TODO: implement constructor here
 	public Patron(int id, String name, String phone, String email, boolean isDeleted) {
@@ -63,19 +65,30 @@ public class Patron {
 		if (book.isOnLoan()) {
 			throw new LibraryException("Book is already loaned");
 		}
-		Loan loan = new Loan(this, book, LocalDate.now(), dueDate);
+		Loan loan = new Loan(this, book, LocalDate.now(), dueDate, null);
 		book.setLoan(loan);
 		books.add(book);
+		
 
 	}
 
 	public void renewBook(Book book, LocalDate dueDate) throws LibraryException {
-		// TODO: implementation here
+		Loan loan = book.getLoan();
+		
+		if (loan == null) {
+			throw new LibraryException("Book not loaned");
+		}
+		book.setDueDate(dueDate);
+		
 	}
 
 	public void returnBook(Book book) throws LibraryException {
+		Loan loan = book.getLoan();
+		loan.setReturnDate();
+		addLoanToHistory(loan);
 		this.books.remove(book);
 		book.returnToLibrary();
+		
 	}
 
 	public void addBook(Book book) {
@@ -95,9 +108,16 @@ public class Patron {
 	}
 	
 	public List<Book> getBooks(){
-		return this.books;
+		return Collections.unmodifiableList(books);
 	}
 	
+	public List<Loan> getLoanHistory(){
+		return Collections.unmodifiableList(loanHistory);
+	}
+	
+	public void addLoanToHistory(Loan loan) {
+		this.loanHistory.add(loan);
+	}
 	
 	
 }

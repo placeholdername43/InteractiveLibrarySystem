@@ -35,7 +35,7 @@ public class LoanDataManager implements DataManager {
 					Patron patron = library.getPatronByID(patronID);
 					Book book = library.getBookByID(bookID);
 
-					Loan loan = new Loan(patron, book, startDate, dueDate);
+					Loan loan = new Loan(patron, book, startDate, dueDate, null);
 
 					book.setLoan(loan);
 					patron.addBook(book);

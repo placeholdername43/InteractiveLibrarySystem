@@ -27,13 +27,14 @@ public class DeleteBook implements Command{
 			book.setIsDeleted(true);
 			System.out.println(book.getDetailsShort() + " Deleted");
 			
-			/*try {
+			try {
 				LibraryData.store(library);
 			} catch (IOException e) {
 				// add rollback if it doesnt work // set to false
+				
 				book.setIsDeleted(false);
 				e.printStackTrace();
-			}*/
+			}
 		}
 		
 		

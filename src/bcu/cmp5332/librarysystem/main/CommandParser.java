@@ -14,6 +14,8 @@ import bcu.cmp5332.librarysystem.commands.Help;
 import bcu.cmp5332.librarysystem.commands.ShowBook;
 import bcu.cmp5332.librarysystem.commands.RenewBook;
 import bcu.cmp5332.librarysystem.commands.ShowPatron;
+import bcu.cmp5332.librarysystem.commands.ViewHistory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -73,6 +75,8 @@ public class CommandParser {
                 	return new DeleteBook(id);
                 } else if (cmd.equals("deletepatron")) {
                 	return new DeletePatron(id);
+                }else if (cmd.equals("viewhistory")) {
+                	return new ViewHistory(id);
                 }
                 
                 

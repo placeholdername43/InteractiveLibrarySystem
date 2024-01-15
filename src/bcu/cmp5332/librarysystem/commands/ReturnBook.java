@@ -29,12 +29,6 @@ public class ReturnBook implements Command {
 		if(patron.getBooks().contains(book)) {
 			patron.returnBook(book);
 			System.out.println("Patron " + patronID + " returned " + "Book " + bookID);
-			try {
-				LibraryData.store(library);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}else {
 			System.out.println("Patron " + patronID + " does not have Book " + bookID);
 		}

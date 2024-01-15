@@ -30,6 +30,7 @@ public class RenewBook implements Command{
 		}
 		
 		patron.renewBook(book, dueDate);
+		System.out.println("Book renewed until: " + dueDate);
 	}
 
 }

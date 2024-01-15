@@ -8,14 +8,17 @@ public class Loan {
 	private Book book;
 	private LocalDate startDate;
 	private LocalDate dueDate;
+	private LocalDate returnDate;
 	private boolean isComplete;
 
 
-	public Loan(Patron patron, Book book, LocalDate startDate, LocalDate dueDate) {
+	public Loan(Patron patron, Book book, LocalDate startDate, LocalDate dueDate, LocalDate returnDate) {
 		this.patron = patron;
 		this.book = book;
 		this.startDate = startDate;
 		this.dueDate = dueDate;
+		this.returnDate = returnDate;
+		this.isComplete = false;
 	}
 
 	// TODO: implementation of Getter and Setter methods
@@ -48,7 +51,7 @@ public class Loan {
 		return dueDate;
 	}
 
-	public void setDueDate() {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 
@@ -61,5 +64,12 @@ public class Loan {
 		
 	}
 	
+	public LocalDate getReturnDate() {
+		return this.returnDate;
+	}
+	
+	public void setReturnDate() {
+		this.returnDate = LocalDate.now();
+	}
 
 }
