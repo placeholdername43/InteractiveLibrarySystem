@@ -53,7 +53,7 @@ public class PatronDetailsWindow extends JFrame implements ActionListener{
 		topPanel.add(new JLabel("Name : " + patron.getName()));
 		topPanel.add(new JLabel("Phone : " + patron.getPhone()));
 		topPanel.add(new JLabel("Email : " + patron.getEmail()));
-
+		
 		bottomPanel.add(cancelBtn);
 		
 		cancelBtn.addActionListener(this);

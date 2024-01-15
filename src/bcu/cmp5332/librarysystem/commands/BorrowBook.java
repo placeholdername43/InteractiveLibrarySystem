@@ -32,7 +32,6 @@ public class BorrowBook implements Command {
 			System.out.println(patron.getNumberOfBooks());
 			System.out.println(library.getBorrowLimit());
 			
-			// add catch  here to return the book
 		}
 		
 

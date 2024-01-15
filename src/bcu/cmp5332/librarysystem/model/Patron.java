@@ -49,7 +49,7 @@ public class Patron {
 		this.phone = phone;
 	}
 
-	public void setID() {
+	public void setID(int ID) {
 		this.id = id;
 	}
 
@@ -65,7 +65,7 @@ public class Patron {
 		if (book.isOnLoan()) {
 			throw new LibraryException("Book is already loaned");
 		}
-		Loan loan = new Loan(this, book, LocalDate.now(), dueDate, null);
+		Loan loan = new Loan(this, book, LocalDate.now(), dueDate, null, false);
 		book.setLoan(loan);
 		books.add(book);
 		
@@ -83,8 +83,13 @@ public class Patron {
 	}
 
 	public void returnBook(Book book) throws LibraryException {
+		
+		if (this.getBooks().contains(book) != true) {
+			throw new LibraryException ("Patron does not have this book on loan");
+		}
 		Loan loan = book.getLoan();
 		loan.setReturnDate();
+		loan.setIsComplete(true);
 		addLoanToHistory(loan);
 		this.books.remove(book);
 		book.returnToLibrary();

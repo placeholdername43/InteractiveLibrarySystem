@@ -31,13 +31,14 @@ public class HistoryDataManager implements DataManager {
 					LocalDate startDate = LocalDate.parse(properties[2]);
 					LocalDate dueDate = LocalDate.parse(properties[3]);
 					LocalDate returnDate = properties[4].isEmpty() ? null : LocalDate.parse(properties[4]);
+					boolean isComplete = Boolean.parseBoolean(properties[5]);
 
 
 					Patron patron = library.getPatronByID(patronID);
 					Book book = library.getBookByID(bookID);
 
-					
-					Loan loan = new Loan(patron, book, startDate, dueDate, returnDate);
+			
+					Loan loan = new Loan(patron, book, startDate, dueDate, returnDate, isComplete);
 					patron.addLoanToHistory(loan);
 					
 					
@@ -69,6 +70,7 @@ public class HistoryDataManager implements DataManager {
 						out.print(loan.getStartDate() + SEPARATOR);
 						out.print(loan.getDueDate() + SEPARATOR);
 						out.print(loan.getReturnDate() + SEPARATOR);
+						out.print(loan.getIsComplete() + SEPARATOR);
 						out.println();
 					}
 				}

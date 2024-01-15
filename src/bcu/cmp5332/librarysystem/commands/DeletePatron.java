@@ -24,14 +24,6 @@ public class DeletePatron implements Command{
 		patron.setIsDeleted(true);
 		System.out.println(patron.getDetailsShort() + "Deleted");
 		
-		/*try {
-			LibraryData.store(library);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
-		
 	}
 
 }

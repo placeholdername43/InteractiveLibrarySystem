@@ -26,7 +26,7 @@ public class ReturnBookWindow extends JFrame implements ActionListener {
     private JTextField patronIDString = new JTextField();
    
 
-    private JButton addBtn = new JButton("Borrow");
+    private JButton addBtn = new JButton("Return");
     private JButton cancelBtn = new JButton("Cancel");
 
     public ReturnBookWindow(MainWindow mw) {
@@ -87,7 +87,7 @@ public class ReturnBookWindow extends JFrame implements ActionListener {
         try {
             int patronID = Integer.parseInt(patronIDString.getText());
             int bookID = Integer.parseInt(bookIDString.getText());
-            // create and execute the AddBook Command
+            // create and execute the returnbook Command
             Command ReturnBook = new ReturnBook(patronID, bookID);
             ReturnBook.execute(mw.getLibrary(), LocalDate.now());
             // refresh the view with the list of books

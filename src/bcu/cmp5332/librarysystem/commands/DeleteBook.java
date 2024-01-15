@@ -26,18 +26,6 @@ public class DeleteBook implements Command{
 		}else {
 			book.setIsDeleted(true);
 			System.out.println(book.getDetailsShort() + " Deleted");
-			
-			try {
-				LibraryData.store(library);
-			} catch (IOException e) {
-				// add rollback if it doesnt work // set to false
-				
-				book.setIsDeleted(false);
-				e.printStackTrace();
-			}
 		}
-		
-		
 	}
-
 }

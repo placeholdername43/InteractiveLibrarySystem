@@ -26,7 +26,7 @@ public class RenewBookWindow extends JFrame implements ActionListener {
     private JTextField patronIDString = new JTextField();
    
 
-    private JButton addBtn = new JButton("Borrow");
+    private JButton addBtn = new JButton("Renew");
     private JButton cancelBtn = new JButton("Cancel");
 
     public RenewBookWindow(MainWindow mw) {

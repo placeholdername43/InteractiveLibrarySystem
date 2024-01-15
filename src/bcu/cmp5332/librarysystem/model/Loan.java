@@ -12,7 +12,7 @@ public class Loan {
 	private boolean isComplete;
 
 
-	public Loan(Patron patron, Book book, LocalDate startDate, LocalDate dueDate, LocalDate returnDate) {
+	public Loan(Patron patron, Book book, LocalDate startDate, LocalDate dueDate, LocalDate returnDate, boolean isComplete) {
 		this.patron = patron;
 		this.book = book;
 		this.startDate = startDate;
@@ -59,7 +59,7 @@ public class Loan {
 		return isComplete;
 	}
 	
-	public void setIsComplete() {
+	public void setIsComplete(boolean isComplete) {
 		this.isComplete = isComplete;
 		
 	}
