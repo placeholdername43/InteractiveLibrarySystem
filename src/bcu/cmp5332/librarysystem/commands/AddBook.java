@@ -6,20 +6,18 @@ import bcu.cmp5332.librarysystem.main.LibraryException;
 import java.time.LocalDate;
 
 /**
- * The {@code AddBook} class implements the {@code Command} interface and represents a command
+ * The {@code AddBook} class implements the {@code Command} interface and utilises a command
  * for adding a new book to the library.
  * <p>
- * When executed, it creates a new {@code Book} object with the specified title, author, publication year,
+ * When ran, it makes a new {@code Book} object with the specified title, author, publication year,
  * publisher, and deletion status. The new book is then added to the provided {@code Library} instance.
  * The execution also prints a message indicating the successful addition of the book along with its assigned ID.
  * </p>
  *
- * @author [Your Name]
- * @version 1.0
- * @see Command
- * @see Book
- * @see Library
+ * 
  */
+
+
 
 public class AddBook implements  Command {
 

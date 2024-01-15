@@ -8,6 +8,19 @@ import bcu.cmp5332.librarysystem.model.Patron;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * The {@code AddPatron} class implements the {@code Command} interface and represents a command
+ * for adding a new patron to the library.
+ * <p>
+ * When exectyued, it creates a new {@code Patron} object with the speciofed name, phone number, email,
+ * and deletion status. The new patron is then added to the provided {@code Library} instance.
+ * The execution also prints a message showing the successful addition of the patron along with its assigned ID.
+ * </p>
+ *
+
+ */
+
+
 public class AddPatron implements Command {
 
 	private final String name;
