@@ -35,6 +35,7 @@ public class AddBook implements  Command {
         this.isDeleted = isDeleted;
     }
     
+    
     @Override
     public void execute(Library library, LocalDate currentDate) throws LibraryException {
         int maxId = 0;
@@ -46,5 +47,6 @@ public class AddBook implements  Command {
         library.addBook(book);
         System.out.println("Book #" + book.getId() + " added.");
     }
+    
 }
  
